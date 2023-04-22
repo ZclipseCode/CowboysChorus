@@ -5,11 +5,9 @@ using UnityEngine.InputSystem;
 
 public class PlayerShoot : MonoBehaviour
 {
-    [SerializeField] GameObject bullet;
-    [SerializeField] Transform leftBulletPoint;
-    [SerializeField] Transform rightBulletPoint;
-    [SerializeField] float bulletSpeed;
+    [SerializeField] LayerMask enemy;
     [SerializeField] float gunCooldown;
+    [SerializeField] float rayDistance;
     bool onLeft;
     bool onRight;
     bool shootingLeft;
@@ -22,13 +20,23 @@ public class PlayerShoot : MonoBehaviour
 
         if (onRight && !shootingRight)
             StartCoroutine(ShootRight());
+
+        Debug.DrawRay(transform.position, -transform.right * rayDistance, Color.green, 1);
+        Debug.DrawRay(transform.position, transform.right * rayDistance, Color.green, 1);
     }
 
     IEnumerator ShootLeft()
     {
         shootingLeft = true;
-        GameObject b = Instantiate(bullet, leftBulletPoint.position, Quaternion.identity);
-        b.GetComponent<Rigidbody2D>().velocity = Vector2.left * bulletSpeed;
+
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, -transform.right, rayDistance, enemy);
+        if (hit.collider != null)
+        {
+            Debug.Log("hit");
+        }
+        else
+            Debug.Log("miss");
+
         yield return new WaitForSeconds(gunCooldown);
         shootingLeft = false;
     }
@@ -36,8 +44,15 @@ public class PlayerShoot : MonoBehaviour
     IEnumerator ShootRight()
     {
         shootingRight = true;
-        GameObject b = Instantiate(bullet, rightBulletPoint.position, Quaternion.identity);
-        b.GetComponent<Rigidbody2D>().velocity = -Vector2.left * bulletSpeed;
+
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.right, rayDistance, enemy);
+        if (hit.collider != null)
+        {
+            Debug.Log("hit");
+        }
+        else
+            Debug.Log("miss");
+
         yield return new WaitForSeconds(gunCooldown);
         shootingRight = false;
     }
