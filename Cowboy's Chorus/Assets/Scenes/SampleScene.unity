@@ -133,7 +133,6 @@ GameObject:
   m_Component:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
-  - component: {fileID: 519420029}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -141,14 +140,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &519420029
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -207,6 +198,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &700043708
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 700043709}
+  m_Layer: 0
+  m_Name: Audio Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &700043709
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 700043708}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1438325548
 GameObject:
   m_ObjectHideFlags: 0
@@ -221,6 +243,7 @@ GameObject:
   - component: {fileID: 1438325549}
   - component: {fileID: 1438325554}
   - component: {fileID: 1438325555}
+  - component: {fileID: 1438325556}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -372,7 +395,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1438325554
 MonoBehaviour:
@@ -386,7 +409,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1353edf71438bec419078025781f6dd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
+  health: 100
 --- !u!61 &1438325555
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -413,6 +436,14 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!81 &1438325556
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1438325548}
+  m_Enabled: 1
 --- !u!1001 &2084638036
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -424,9 +455,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cowboy Spawner (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 748574550619659164, guid: e5b3dfecf43b87f4f8cc838803043f7a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 748574550619659167, guid: e5b3dfecf43b87f4f8cc838803043f7a, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 748574550619659167, guid: e5b3dfecf43b87f4f8cc838803043f7a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -481,9 +516,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cowboy Spawner
       objectReference: {fileID: 0}
+    - target: {fileID: 748574550619659164, guid: e5b3dfecf43b87f4f8cc838803043f7a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 748574550619659167, guid: e5b3dfecf43b87f4f8cc838803043f7a, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 748574550619659167, guid: e5b3dfecf43b87f4f8cc838803043f7a, type: 3}
       propertyPath: m_LocalPosition.x
