@@ -16,10 +16,16 @@ public class PlayerShoot : MonoBehaviour
     void Update()
     {
         if (onLeft && !shootingLeft)
+        {
+            shootingLeft = true;
             StartCoroutine(ShootLeft());
+        }
 
         if (onRight && !shootingRight)
+        {
+            shootingRight = true;
             StartCoroutine(ShootRight());
+        }
 
         Debug.DrawRay(transform.position, -transform.right * rayDistance, Color.green, 1);
         Debug.DrawRay(transform.position, transform.right * rayDistance, Color.green, 1);
@@ -27,15 +33,11 @@ public class PlayerShoot : MonoBehaviour
 
     IEnumerator ShootLeft()
     {
-        shootingLeft = true;
-
         RaycastHit2D hit = Physics2D.Raycast(transform.position, -transform.right, rayDistance, enemy);
         if (hit.collider != null)
         {
-            Debug.Log("hit");
+            Destroy(hit.collider.gameObject);
         }
-        else
-            Debug.Log("miss");
 
         yield return new WaitForSeconds(gunCooldown);
         shootingLeft = false;
@@ -43,15 +45,11 @@ public class PlayerShoot : MonoBehaviour
 
     IEnumerator ShootRight()
     {
-        shootingRight = true;
-
         RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.right, rayDistance, enemy);
         if (hit.collider != null)
         {
-            Debug.Log("hit");
+            Destroy(hit.collider.gameObject);
         }
-        else
-            Debug.Log("miss");
 
         yield return new WaitForSeconds(gunCooldown);
         shootingRight = false;
