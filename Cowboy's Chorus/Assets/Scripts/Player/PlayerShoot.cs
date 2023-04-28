@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerShoot : MonoBehaviour
+public class PlayerShoot : MonoBehaviour // add score sfx
 {
     [SerializeField] LayerMask enemy;
     [SerializeField] float gunCooldown;
     [SerializeField] float rayDistance;
+    [SerializeField] int damage;
     bool onLeft;
     bool onRight;
     bool shootingLeft;
@@ -36,7 +37,8 @@ public class PlayerShoot : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(transform.position, -transform.right, rayDistance, enemy);
         if (hit.collider != null)
         {
-            Destroy(hit.collider.gameObject);
+            CowboyHealth health = hit.collider.GetComponent<CowboyHealth>();
+            health.TakeDamage(damage);
         }
 
         yield return new WaitForSeconds(gunCooldown);
@@ -48,7 +50,8 @@ public class PlayerShoot : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.right, rayDistance, enemy);
         if (hit.collider != null)
         {
-            Destroy(hit.collider.gameObject);
+            CowboyHealth health = hit.collider.GetComponent<CowboyHealth>();
+            health.TakeDamage(damage);
         }
 
         yield return new WaitForSeconds(gunCooldown);
