@@ -144,6 +144,7 @@ MonoBehaviour:
   player:
     serializedVersion: 2
     m_Bits: 128
+  gunShot: {fileID: 8300000, guid: fc5564f51968b3f4c9dbcf349f1488f9, type: 3}
   timeBeforeShoot: 2
   rayDistance: 10
   damage: 1

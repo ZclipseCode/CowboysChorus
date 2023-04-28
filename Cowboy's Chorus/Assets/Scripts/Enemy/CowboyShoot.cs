@@ -5,10 +5,17 @@ using UnityEngine;
 public class CowboyShoot : MonoBehaviour
 {
     [SerializeField] LayerMask player;
+    [SerializeField] AudioClip gunShot;
     [SerializeField] float timeBeforeShoot;
     [SerializeField] float rayDistance;
     [SerializeField] int damage;
+    AudioSource audioSource;
     bool playerTargeted;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     void Update()
     {
@@ -32,6 +39,8 @@ public class CowboyShoot : MonoBehaviour
     IEnumerator Shoot(RaycastHit2D hit)
     {
         yield return new WaitForSeconds(timeBeforeShoot);
+
+        audioSource.PlayOneShot(gunShot);
 
         PlayerHealth health = hit.collider.GetComponent<PlayerHealth>();
         health.TakeDamage(damage);
