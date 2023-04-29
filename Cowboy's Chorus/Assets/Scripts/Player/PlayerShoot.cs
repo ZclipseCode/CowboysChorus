@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerShoot : MonoBehaviour // add score sfx
+public class PlayerShoot : BasicControls
 {
     [SerializeField] LayerMask enemy;
     [SerializeField] AudioClip gunShot;
@@ -14,8 +14,6 @@ public class PlayerShoot : MonoBehaviour // add score sfx
     [SerializeField] float sfxDelay;
     [SerializeField] int damage;
     AudioSource audioSource;
-    bool onLeft;
-    bool onRight;
     bool shootingLeft;
     bool shootingRight;
 
@@ -92,15 +90,5 @@ public class PlayerShoot : MonoBehaviour // add score sfx
         yield return new WaitForSeconds(sfxDelay);
 
         audioSource.PlayOneShot(reload);
-    }
-
-    public void OnLeft(InputAction.CallbackContext context)
-    {
-        onLeft = context.action.triggered;
-    }
-
-    public void OnRight(InputAction.CallbackContext context)
-    {
-        onRight = context.action.triggered;
     }
 }

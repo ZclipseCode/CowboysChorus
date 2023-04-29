@@ -10,7 +10,7 @@ public class Music : MonoBehaviour
     [SerializeField] AudioClip standoff;
     [SerializeField] AudioClip win;
     [SerializeField] AudioClip lose;
-    Music instance;
+    static Music instance;
     AudioSource audioSource;
 
     private void Awake()
@@ -30,7 +30,7 @@ public class Music : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
 
-        NewScene(Stage.HorseRiding);
+        NewScene(Stage.Menu);
     }
 
     public void NewScene(Stage stage)
