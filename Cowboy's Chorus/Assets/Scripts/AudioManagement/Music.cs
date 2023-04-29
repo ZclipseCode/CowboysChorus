@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Music : MonoBehaviour
 {
@@ -15,6 +16,15 @@ public class Music : MonoBehaviour
 
     private void Awake()
     {
+        if (SceneManager.GetActiveScene().name != "Menu")
+        {
+            GameObject aam = GameObject.FindGameObjectWithTag("AntiAudio");
+            if (aam != null)
+            {
+                Destroy(gameObject);
+            }
+        }
+
         if (instance == null)
         {
             instance = this;

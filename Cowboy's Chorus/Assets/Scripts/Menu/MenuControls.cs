@@ -5,11 +5,42 @@ using UnityEngine.SceneManagement;
 
 public class MenuControls : BasicControls
 {
+    [SerializeField] GameObject audioManager;
+    [SerializeField] GameObject antiAudioManager;
+    bool leftPressed;
+    bool antiOn;
+
     void Update()
     {
-        if (onLeft)
+        if (onLeft && !leftPressed)
         {
+            if (antiOn)
+            {
+                Instantiate(audioManager);
+                GameObject aam = GameObject.FindGameObjectWithTag("AntiAudio");
+                if (aam != null)
+                {
+                    Destroy(aam);
+                }
+                antiOn = false;
+            }
+            else
+            {
+                Instantiate(antiAudioManager);
+                GameObject am = GameObject.FindGameObjectWithTag("Audio");
+                if (am != null)
+                {
+                    Destroy(am);
+                }
+                antiOn = true;
+            }
 
+            leftPressed = true;
+        }
+
+        if (!onLeft)
+        {
+            leftPressed = false;
         }
 
         if (onRight)
@@ -20,8 +51,14 @@ public class MenuControls : BasicControls
 
     void LoadStartGame()
     {
-        Music music = GameObject.FindGameObjectWithTag("Audio").GetComponent<Music>();
-        music.NewScene(Stage.HorseRiding);
+        GameObject music = GameObject.FindGameObjectWithTag("Audio");
+        if (music != null)
+        {
+            if (music.TryGetComponent<Music>(out Music m))
+            {
+                m.NewScene(Stage.HorseRiding);
+            }
+        }  
 
         SceneManager.LoadScene("HorseRiding");
     }

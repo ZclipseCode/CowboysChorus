@@ -283,6 +283,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8945353d78c87f840bddb722aeb4ef9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioManager: {fileID: 3423600208245676366, guid: 3b051cd6d64c1934ea94e22a6ac8b5af, type: 3}
+  antiAudioManager: {fileID: 8123582676890343402, guid: ee6f2ec90c4e6cf47be4811216c11a34, type: 3}
 --- !u!1001 &1165933795
 PrefabInstance:
   m_ObjectHideFlags: 0
