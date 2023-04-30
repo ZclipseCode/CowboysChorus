@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using System;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] int target;
     [SerializeField] string standoffSceneName;
     [SerializeField] TMP_Text remaining;
+    [SerializeField] AudioClip playerShot;
+    [SerializeField] float playerShotTime;
     int defeats;
 
     private void Start()
@@ -30,10 +33,19 @@ public class GameManager : MonoBehaviour
             GameObject music = GameObject.FindGameObjectWithTag("Audio");
             if (music.TryGetComponent<Music>(out Music m))
             {
-                m.NewScene(Stage.Standoff);
+                StartCoroutine(m.PlayClip(playerShot, playerShotTime, Standoff));
             }
-
-            SceneManager.LoadScene(standoffSceneName);
         }
+    }
+
+    private void Standoff()
+    {
+        GameObject music = GameObject.FindGameObjectWithTag("Audio");
+        if (music.TryGetComponent<Music>(out Music m))
+        {
+            m.NewScene(Stage.Standoff);
+        }
+
+        SceneManager.LoadScene(standoffSceneName);
     }
 }

@@ -11,6 +11,7 @@ public class CowboyShoot : MonoBehaviour
     [SerializeField] int damage;
     AudioSource audioSource;
     bool playerTargeted;
+    bool firstShot;
 
     private void Start()
     {
@@ -38,6 +39,18 @@ public class CowboyShoot : MonoBehaviour
 
     IEnumerator Shoot(RaycastHit2D hit)
     {
+        if (!firstShot)
+        {
+            yield return new WaitForSeconds(timeBeforeShoot / 2);
+
+            audioSource.PlayOneShot(gunShot);
+
+            PlayerHealth h = hit.collider.GetComponent<PlayerHealth>();
+            h.TakeDamage(damage);
+
+            firstShot = true;
+        }
+
         yield return new WaitForSeconds(timeBeforeShoot);
 
         audioSource.PlayOneShot(gunShot);
