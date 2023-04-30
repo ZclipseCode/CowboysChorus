@@ -49,34 +49,30 @@ public class Music : MonoBehaviour
         {
             audioSource.clip = horseRiding;
             audioSource.Play();
+            audioSource.volume = 0.2f;
         }
         else if (stage == Stage.Standoff)
         {
             audioSource.clip = standoff;
             audioSource.Play();
+            audioSource.volume = 1;
         }
         else if (stage == Stage.Win)
         {
             audioSource.clip = win;
             audioSource.Play();
+            audioSource.volume = 1;
         }
         else if (stage == Stage.Lose)
         {
             audioSource.clip = lose;
             audioSource.Play();
+            audioSource.volume = 1;
         }
         else
         {
             audioSource.clip = menu;
             audioSource.Play();
-        }
-
-        if (stage == Stage.Standoff)
-        {
-            audioSource.volume = 1;
-        }
-        else
-        {
             audioSource.volume = 0.2f;
         }
     }
@@ -88,6 +84,11 @@ public class Music : MonoBehaviour
         yield return new WaitForSeconds(length);
 
         nextMethod.Invoke();
+    }
+
+    public void StopTrack()
+    {
+        audioSource.Stop();
     }
 }
 

@@ -432,6 +432,7 @@ GameObject:
   - component: {fileID: 1438325555}
   - component: {fileID: 1438325557}
   - component: {fileID: 1438325556}
+  - component: {fileID: 1438325558}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -518,6 +519,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 379728fc-d026-4c94-bd5f-461f273593c9
     m_ActionName: Player/Right Shoot[/Mouse/rightButton,/XInputControllerWindows/rightTrigger]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1438325558}
+        m_TargetAssemblyTypeName: BasicControls, Assembly-CSharp
+        m_MethodName: OnInteract
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 3cbd5ace-b4e3-4461-b404-94093f22ddb8
+    m_ActionName: Player/Visual Toggle[/Mouse/middleButton,/XInputControllerWindows/buttonSouth]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -737,6 +754,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1438325558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1438325548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa3434b791c294b42bb1aafa76ca80da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1597332993
 GameObject:
   m_ObjectHideFlags: 0

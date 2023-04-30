@@ -86,6 +86,13 @@ public class PlayerStandoff : BasicControls
     IEnumerator ShootReady()
     {
         shootReady = true;
+
+        GameObject music = GameObject.FindGameObjectWithTag("Audio");
+        if (music.TryGetComponent<Music>(out Music m))
+        {
+            m.StopTrack();
+        }
+
         audioSource.PlayOneShot(draw);
 
         yield return new WaitForSeconds(timeToShoot);
