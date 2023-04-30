@@ -9,6 +9,14 @@ public class CowboyHealth : Health
         health -= damage;
 
         if (health <= 0)
+        {
+            GameObject gameManager = GameObject.FindGameObjectWithTag("Game");
+            if (gameManager.TryGetComponent<GameManager>(out GameManager gm))
+            {
+                gm.Increment();
+            }
+
             Destroy(gameObject);
+        }
     }
 }
