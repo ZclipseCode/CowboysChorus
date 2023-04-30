@@ -143,6 +143,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menu: {fileID: 8300000, guid: 5db8d1e82b8e16b4799cbb7611aa0bc4, type: 3}
   horseRiding: {fileID: 8300000, guid: b9ea3115acc804845b33a53764165b91, type: 3}
-  standoff: {fileID: 0}
-  win: {fileID: 0}
-  lose: {fileID: 0}
+  standoff: {fileID: 8300000, guid: 5996753c4e9686b43877776fcadac5f2, type: 3}
+  win: {fileID: 8300000, guid: 5cd6e66af3ae414408682c34bb0aa9cb, type: 3}
+  lose: {fileID: 8300000, guid: f1507ae3d42421040ad7c479d82992e2, type: 3}

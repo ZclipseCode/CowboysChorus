@@ -385,6 +385,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  loseSceneName: Menu
 --- !u!61 &1438325555
 BoxCollider2D:
   m_ObjectHideFlags: 0

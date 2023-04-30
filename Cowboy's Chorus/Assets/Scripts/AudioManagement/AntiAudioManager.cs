@@ -19,13 +19,4 @@ public class AntiAudioManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
     }
-
-    //void Start()
-    //{
-    //    GameObject audioManager = GameObject.FindGameObjectWithTag("Audio");
-    //    if (audioManager != null)
-    //    {
-    //        Destroy(audioManager);
-    //    }
-    //}
 }
