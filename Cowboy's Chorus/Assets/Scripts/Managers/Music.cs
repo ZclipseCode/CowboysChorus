@@ -70,6 +70,24 @@ public class Music : MonoBehaviour
             audioSource.clip = menu;
             audioSource.Play();
         }
+
+        if (stage == Stage.Standoff)
+        {
+            audioSource.volume = 1;
+        }
+        else
+        {
+            audioSource.volume = 0.2f;
+        }
+    }
+
+    public IEnumerator PlayClip(AudioClip clip, float length, Action nextMethod)
+    {
+        audioSource.PlayOneShot(clip);
+
+        yield return new WaitForSeconds(length);
+
+        nextMethod.Invoke();
     }
 }
 
