@@ -147,7 +147,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   gunShot: {fileID: 8300000, guid: 93b07ee2fa89f0c489cda7ce2d851444, type: 3}
-  timeBeforeShoot: 1.5
+  timeBeforeShoot: 1.75
   rayDistance: 10
   damage: 1
 --- !u!114 &2808961852884074645
