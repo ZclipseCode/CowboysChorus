@@ -355,7 +355,19 @@ MonoBehaviour:
     m_ActionId: 379728fc-d026-4c94-bd5f-461f273593c9
     m_ActionName: Player/Right Shoot[/Mouse/rightButton,/XInputControllerWindows/rightTrigger]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1238095894}
+        m_TargetAssemblyTypeName: BasicControls, Assembly-CSharp
+        m_MethodName: OnInteract
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 3cbd5ace-b4e3-4461-b404-94093f22ddb8
     m_ActionName: Player/Visual Toggle[/Mouse/middleButton]
   m_NeverAutoSwitchControlSchemes: 0

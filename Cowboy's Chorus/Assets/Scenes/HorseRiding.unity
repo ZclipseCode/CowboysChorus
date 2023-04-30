@@ -457,7 +457,7 @@ MonoBehaviour:
   gunShot: {fileID: 8300000, guid: 8e0d3bab001031c4cad5ee7bcccab044, type: 3}
   score: {fileID: 8300000, guid: c6f721b2e03d39a479a0dfea5c29bde9, type: 3}
   reload: {fileID: 8300000, guid: 5f29f7a5d8bb978419ae2bda97f26aad, type: 3}
-  gunCooldown: 3
+  gunCooldown: 2.75
   rayDistance: 10
   sfxDelay: 0.35
   damage: 1
@@ -619,7 +619,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1353edf71438bec419078025781f6dd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
+  health: 5
   loseSceneName: Menu
   cowboyShot: {fileID: 8300000, guid: 93b07ee2fa89f0c489cda7ce2d851444, type: 3}
   cowboyShotLength: 0.45
@@ -911,6 +911,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cowboy Spawner (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 748574550619659164, guid: e5b3dfecf43b87f4f8cc838803043f7a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 748574550619659167, guid: e5b3dfecf43b87f4f8cc838803043f7a, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -967,6 +971,10 @@ PrefabInstance:
     - target: {fileID: 748574550619659164, guid: e5b3dfecf43b87f4f8cc838803043f7a, type: 3}
       propertyPath: m_Name
       value: Cowboy Spawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 748574550619659164, guid: e5b3dfecf43b87f4f8cc838803043f7a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 748574550619659167, guid: e5b3dfecf43b87f4f8cc838803043f7a, type: 3}
       propertyPath: m_RootOrder

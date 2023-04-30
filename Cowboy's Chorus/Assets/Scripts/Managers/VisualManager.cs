@@ -69,6 +69,8 @@ public class VisualManager : BasicControls
 
     void EnableSR()
     {
+        CollectGameObjects();
+
         goList.Where(go => go.GetComponent<SpriteRenderer>() != null)
                 .ToList()
                 .ForEach(go => go.GetComponent<SpriteRenderer>().enabled = true);
@@ -78,6 +80,8 @@ public class VisualManager : BasicControls
 
     void DisableSR()
     {
+        CollectGameObjects();
+
         goList.Where(go => go.GetComponent<SpriteRenderer>() != null)
                 .ToList()
                 .ForEach(go => go.GetComponent<SpriteRenderer>().enabled = false);
