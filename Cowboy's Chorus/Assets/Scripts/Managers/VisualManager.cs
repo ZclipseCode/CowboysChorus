@@ -96,4 +96,9 @@ public class VisualManager : BasicControls
             EnableSR();
         }
     }
+
+    public bool GetActive()
+    {
+        return active;
+    }
 }

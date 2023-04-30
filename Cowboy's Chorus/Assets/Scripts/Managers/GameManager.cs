@@ -9,24 +9,24 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] int target;
     [SerializeField] string standoffSceneName;
-    [SerializeField] TMP_Text remaining;
+    //[SerializeField] TMP_Text remaining;
     [SerializeField] AudioClip playerShot;
     [SerializeField] float playerShotTime;
     int defeats;
 
-    private void Start()
-    {
-        if (remaining != null)
-        {
-            remaining.text = $"{defeats}/{target}";
-        }
-    }
+    //private void Start()
+    //{
+    //    if (remaining != null)
+    //    {
+    //        remaining.text = $"{defeats}/{target}";
+    //    }
+    //}
 
     public void Increment()
     {
         defeats++;
 
-        remaining.text = $"{defeats}/{target}";
+        //remaining.text = $"{defeats}/{target}";
 
         if (defeats >= target)
         {

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3166705860108013334}
   - component: {fileID: 2808961852884074645}
   - component: {fileID: 1856965891}
+  - component: {fileID: 6758774510331097188}
   m_Layer: 6
   m_Name: Cowboy
   m_TagString: Untagged
@@ -258,6 +259,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6758774510331097188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3166705860108013325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13a13de42bf34184aa9000abc9d4bd58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1506624220617142760
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -167,9 +167,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eabaee1040dfe714a8cc3bc656878f24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: 1
+  target: 10
   standoffSceneName: Standoff
-  remaining: {fileID: 1597332995}
   playerShot: {fileID: 8300000, guid: 8e0d3bab001031c4cad5ee7bcccab044, type: 3}
   playerShotTime: 0.5
 --- !u!1 &519420028
@@ -265,7 +264,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &613946614
 MonoBehaviour:
   m_ObjectHideFlags: 0
