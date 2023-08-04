@@ -58,6 +58,17 @@
                 },
                 {
                     "name": "",
+                    "id": "af15048a-5dbe-44b2-aeaa-5e715165c0d1",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Left Shoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "1f60ee1f-43a1-4eea-ae9b-be14ef148f10",
                     "path": "<Gamepad>/rightTrigger",
                     "interactions": "",
@@ -80,6 +91,17 @@
                 },
                 {
                     "name": "",
+                    "id": "6bd27a5a-412f-4dd0-af39-816a67d61f35",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Right Shoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "c0bdfd62-e329-4add-a57e-0647afc7c2de",
                     "path": "<Mouse>/middleButton",
                     "interactions": "",
@@ -96,6 +118,17 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
+                    "action": "Visual Toggle",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5041b134-319d-4d77-9eef-36ae057a0c85",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
                     "action": "Visual Toggle",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -122,6 +155,17 @@
                 {
                     "devicePath": "<Mouse>",
                     "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "Keyboard",
+            "bindingGroup": "Keyboard",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": true,
                     "isOR": false
                 }
             ]
