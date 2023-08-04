@@ -42,6 +42,8 @@ public class CowboyShoot : MonoBehaviour
     {
         if (!firstShot)
         {
+            yield return new WaitForSeconds(timeBeforeShoot / 2 - 0.05f);
+
             audioSource.PlayOneShot(neigh);
 
             yield return new WaitForSeconds(timeBeforeShoot / 2);
