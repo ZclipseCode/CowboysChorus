@@ -6,6 +6,7 @@ public class CowboyShoot : MonoBehaviour
 {
     [SerializeField] LayerMask player;
     [SerializeField] AudioClip gunShot;
+    [SerializeField] AudioClip neigh;
     [SerializeField] float timeBeforeShoot;
     [SerializeField] float rayDistance;
     [SerializeField] int damage;
@@ -41,14 +42,20 @@ public class CowboyShoot : MonoBehaviour
     {
         if (!firstShot)
         {
+            audioSource.PlayOneShot(neigh);
+
             yield return new WaitForSeconds(timeBeforeShoot / 2);
 
-            audioSource.PlayOneShot(gunShot);
+            CowboyHealth cowboyHealth = GetComponent<CowboyHealth>();
+            if (cowboyHealth.GetHealth() > 0)
+            {
+                audioSource.PlayOneShot(gunShot);
 
-            PlayerHealth h = hit.collider.GetComponent<PlayerHealth>();
-            h.TakeDamage(damage);
+                PlayerHealth h = hit.collider.GetComponent<PlayerHealth>();
+                h.TakeDamage(damage);
 
-            firstShot = true;
+                firstShot = true;
+            }
         }
 
         yield return new WaitForSeconds(timeBeforeShoot);
