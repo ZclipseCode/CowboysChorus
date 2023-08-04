@@ -9,6 +9,7 @@ public class PlayerShoot : BasicControls
     [SerializeField] AudioClip gunShot;
     [SerializeField] AudioClip score;
     [SerializeField] AudioClip reload;
+    [SerializeField] AudioClip miss;
     [SerializeField] float gunCooldown;
     [SerializeField] float rayDistance;
     [SerializeField] float sfxDelay;
@@ -16,6 +17,9 @@ public class PlayerShoot : BasicControls
     AudioSource audioSource;
     bool shootingLeft;
     bool shootingRight;
+
+    [SerializeField] AudioSource leftMiss;
+    [SerializeField] AudioSource rightMiss;
 
     private void Start()
     {
@@ -52,6 +56,10 @@ public class PlayerShoot : BasicControls
             CowboyHealth health = hit.collider.GetComponent<CowboyHealth>();
             health.TakeDamage(damage);
         }
+        else
+        {
+            StartCoroutine(Miss(-1));
+        }
 
         StartCoroutine(Reload());
 
@@ -70,6 +78,10 @@ public class PlayerShoot : BasicControls
 
             CowboyHealth health = hit.collider.GetComponent<CowboyHealth>();
             health.TakeDamage(damage);
+        }
+        else
+        {
+            StartCoroutine(Miss(1));
         }
 
         StartCoroutine(Reload());
@@ -90,5 +102,19 @@ public class PlayerShoot : BasicControls
         yield return new WaitForSeconds(sfxDelay);
 
         audioSource.PlayOneShot(reload);
+    }
+
+    IEnumerator Miss(int dir)
+    {
+        yield return new WaitForSeconds(0.2f);
+
+        if (dir < 0)
+        {
+            leftMiss.PlayOneShot(miss);
+        }
+        else
+        {
+            rightMiss.PlayOneShot(miss);
+        }
     }
 }
