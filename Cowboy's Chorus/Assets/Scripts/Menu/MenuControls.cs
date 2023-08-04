@@ -10,6 +10,13 @@ public class MenuControls : BasicControls
     bool leftPressed;
     bool antiOn;
 
+    bool ready;
+
+    private void Start()
+    {
+        StartCoroutine(PlayDelay());
+    }
+
     void Update()
     {
         if (onLeft && !leftPressed)
@@ -43,7 +50,7 @@ public class MenuControls : BasicControls
             leftPressed = false;
         }
 
-        if (onRight)
+        if (onRight && ready)
         {
             LoadStartGame();
         }
@@ -61,5 +68,12 @@ public class MenuControls : BasicControls
         }  
 
         SceneManager.LoadScene("HorseRiding");
+    }
+
+    IEnumerator PlayDelay()
+    {
+        yield return new WaitForSeconds(1.5f);
+
+        ready = true;
     }
 }
